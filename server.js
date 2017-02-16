@@ -4,7 +4,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var fs = require('fs');
 
-app.get('/', function(req, res){
+app.get('/', function(req, res){ 
   res.sendFile(__dirname + '/index.html');
 });
 
@@ -15,6 +15,6 @@ io.on('connection', function(socket){
   })
 })
 
-server.listen(9000, function(){
-  console.log('Server started.');
+server.listen(process.env.PORT, function(){
+  console.log('Server started ' + process.env.PORT);
 });
