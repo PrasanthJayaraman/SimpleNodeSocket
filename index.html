@@ -7,7 +7,7 @@
     <script type="text/javascript">
       var socket = io.connect('http://localhost:9000');
       socket.on('msg', function (data) {
-        alert(data);
+        alert(data.text);
       });
       function sendMsg(){
         var txtField = document.getElementById('text').value;
@@ -22,7 +22,7 @@
       <br>
       <input type="text" name="" id="text" style="width:150px;height:40px;border:1px solid black;padding-left:8px;margin:10px;"value="">
       <br>
-      <input type="button" name="" value="Send Message" onclick="sendMSg">
+      <input type="button" name="" value="Send Message" onClick="sendMsg()">
     </div>
   </body>
 </html>
